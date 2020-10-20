@@ -30,10 +30,22 @@ values
 
 insert into users_roles (user_id, role_id) values (1, 1), (1, 2);
 
+
+create table category (
+                 id                      bigserial primary key,
+                 title                   varchar(255)
+             );
+insert into category (id, title) values
+(1, 'Rye bread'),
+(2, 'Wheat bread'),
+(3,'Pone');
+
+
 create table products (
     id                      bigserial primary key,
     title                   varchar(255),
-    price                   int
+    price                   int,
+    category_id             bigint references category(id)
 );
 
 create table orders (
@@ -52,30 +64,33 @@ create table order_items (
     quantity                int
 );
 
-insert into products (title, price)
+insert into products (title, price, category_id)
 values
-('Bread1', 1),
-('Bread2', 2),
-('Bread3', 3),
-('Bread4', 32),
-('Bread5', 42),
-('Bread6', 52),
-('Bread7', 32),
-('Bread8', 42),
-('Bread9', 552),
-('Bread10', 32),
-('Bread11', 122),
-('Bread12', 312),
-('Bread13', 22),
-('Bread14', 432),
-('Bread15', 532),
-('Bread16', 542),
-('Bread17', 232),
-('Bread18', 22),
-('Bread19', 22),
-('Bread20', 22),
-('Bread21', 22),
-('Bread22', 22),
-('Bread23', 22),
-('Bread24', 22),
-('Bread25', 22);
+('Bread1', 1,1),
+('Bread2', 2,2),
+('Bread3', 3,1),
+('Bread4', 32,2),
+('Bread5', 42,1),
+('Bread6', 52,2),
+('Bread7', 32,1),
+('Bread8', 42,2),
+('Bread9', 552,1),
+('Bread10', 32,2),
+('Bread11', 122,1),
+('Bread12', 312,2),
+('Bread13', 22,1),
+('Bread14', 432,2),
+('Bread15', 532,1),
+('Bread16', 542,2),
+('Bread17', 232,1),
+('Bread18', 22,2),
+('Bread19', 22,1),
+('Bread20', 22,2),
+('Bread21', 22,1),
+('Bread22', 22,2),
+('Bread23', 22,1),
+('Bread24', 22,2),
+('Bread25', 22,1),
+('Cake1', 100, 3),
+('Cake2', 105, 3),
+('Cake3', 150, 3);

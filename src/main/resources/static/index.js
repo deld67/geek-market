@@ -19,6 +19,10 @@
                 templateUrl: 'admin/admin.html',
                 controller: 'adminController'
             })
+            .when('/category', {
+                            templateUrl: 'category/category.html',
+                            controller: 'categoryController'
+                        })
             .when('/cart', {
                 templateUrl: 'cart/cart.html',
                 controller: 'cartController'
