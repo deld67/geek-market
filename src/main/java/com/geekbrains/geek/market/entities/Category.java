@@ -1,15 +1,13 @@
 package com.geekbrains.geek.market.entities;
 
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "category")
+@Table(name = "categories")
 @Data
-@NoArgsConstructor
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,5 +16,4 @@ public class Category {
 
     @Column(name = "title")
     private String title;
-
 }
