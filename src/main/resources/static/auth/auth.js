@@ -1,5 +1,5 @@
 angular.module('app').controller('authController', function ($scope, $http, $localStorage) {
-    const contextPath = 'http://localhost:8189/market';
+    const contextPath = 'http://localhost:8080/market';
 
     $scope.tryToAuth = function () {
         $http.post(contextPath + '/auth', $scope.user)
