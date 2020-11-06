@@ -1,0 +1,39 @@
+<div>
+    <h3>Обновить профиль</h3>
+    <form novalidate ng-submit="submitUpdateProfile()">
+        <div class="form-group col-md-6">
+            <label for="elementName">Имя</label>
+            <input class="form-control" type="text" ng-model="userdatail.name" id="elementName">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="elementSurname">Фамилия</label>
+            <input class="form-control" type="text" ng-model="userdatail.surname" id="elementSurname">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="elementPhone">Телефон</label>
+            <input class="form-control" type="text" ng-model="userdatail.phone" id="elementPhone">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="elementPhone">Email</label>
+            <input class="form-control" type="text" ng-model="userdatail.email" id="elementEmail">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="elementBirthyear">Год рождения</label>
+            <input class="form-control" type="text" ng-model="userdatail.birthyear" id="elementBirthyear">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="elementCity">Город проживания</label>
+            <input class="form-control" type="text" ng-model="userdatail.city" id="elementCity">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputPassword">Для подтверждения корректности идентификации<br>
+                введите свой пароль </label>
+            <input type="password" ng-model="userdatail.password" id="inputPassword" class="form-control" placeholder="Пароль" style="margin-bottom: 10px;" required="">
+        </div>
+
+        <div>
+            <button class="btn btn-success" type="submit">Сохранить</button>
+        </div>
+    </form>
+</div>
