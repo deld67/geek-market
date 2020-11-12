@@ -22,10 +22,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/api/v1/**").authenticated()
+                .antMatchers("/h2-console/**").permitAll()
+                //.antMatchers("/api/v1/**").permitAll()
                 .anyRequest().permitAll()
                 .and()
                 .csrf().disable()
-                .sessionManagement().sessionCreationPolicy( SessionCreationPolicy.STATELESS);
+                .sessionManagement().sessionCreationPolicy( SessionCreationPolicy.STATELESS)
+                .and()
+                .headers().frameOptions().disable();
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
 

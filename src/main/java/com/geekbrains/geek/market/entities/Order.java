@@ -35,15 +35,18 @@ public class Order {
     @Column(name = "address")
     private String address;
 
-    public Order(User user, Cart cart, String address) {
+    @Column(name = "person")
+    private String person;
+
+    public Order(User user, Cart cart, String address, String person) {
         this.user = user;
         this.price = cart.getPrice();
         this.items = new ArrayList<>();
         this.address = address;
+        this.person = person;
         cart.getItems().stream().forEach(oi -> {
             oi.setOrder(this);
             items.add(oi);
         });
-        cart.clear();
     }
 }
