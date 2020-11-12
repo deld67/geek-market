@@ -3,10 +3,8 @@ package com.geekbrains.geek.market.services;
 
 import com.geekbrains.geek.market.entities.Role;
 import com.geekbrains.geek.market.entities.User;
-import com.geekbrains.geek.market.exceptions.ResourceNotFoundException;
 import com.geekbrains.geek.market.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -40,4 +38,9 @@ public class UserService implements UserDetailsService {
     private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
+
+    public User saveOrUpdate(User user) {
+        return userRepository.save(user);
+    }
+
 }

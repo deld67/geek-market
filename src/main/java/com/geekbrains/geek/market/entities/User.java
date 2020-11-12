@@ -1,5 +1,7 @@
 package com.geekbrains.geek.market.entities;
 
+import com.geekbrains.geek.market.entities.Role;
+import com.geekbrains.geek.market.enums.sex;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,9 +21,6 @@ public class User {
 
     @Column(name = "password")
     private String password;
-
-    @Column(name = "email")
-    private String email;
 
     @ManyToMany
     @JoinTable(name = "users_roles",
