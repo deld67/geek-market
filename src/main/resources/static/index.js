@@ -23,9 +23,9 @@
                 templateUrl: 'admin/admin.html',
                 controller: 'adminController'
             })
-            .when('/userprofile', {
-                 templateUrl: 'userprofile/userprofile.html',
-                  controller: 'userprofileController'
+            .when('/profile', {
+                 templateUrl: 'profile/profile.html',
+                  controller: 'profileController'
             })
             .when('/cart', {
                 templateUrl: 'cart/cart.html',

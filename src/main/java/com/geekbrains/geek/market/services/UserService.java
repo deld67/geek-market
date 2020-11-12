@@ -1,13 +1,10 @@
 package com.geekbrains.geek.market.services;
 
 
-import com.geekbrains.geek.market.entities.Product;
 import com.geekbrains.geek.market.entities.Role;
 import com.geekbrains.geek.market.entities.User;
-import com.geekbrains.geek.market.exceptions.ResourceNotFoundException;
 import com.geekbrains.geek.market.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
