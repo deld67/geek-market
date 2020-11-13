@@ -2,7 +2,6 @@ create table users (
   id                    bigserial,
   username              varchar(30) not null,
   password              varchar(80) not null,
-  email                 varchar(50) unique,
   primary key (id)
 );
 
@@ -24,9 +23,9 @@ insert into roles (name)
 values
 ('ROLE_USER'), ('ROLE_ADMIN'), ('SOMETHING');
 
-insert into users (username, password, email)
+insert into users (username, password)
 values
-('user', '$2a$04$Fx/SX9.BAvtPlMyIIqqFx.hLY2Xp8nnhpzvEEVINvVpwIPbA3v/.i', 'user@gmail.com');
+('user', '$2a$04$Fx/SX9.BAvtPlMyIIqqFx.hLY2Xp8nnhpzvEEVINvVpwIPbA3v/.i');
 
 insert into users_roles (user_id, role_id) values (1, 1), (1, 2);
 
@@ -57,6 +56,22 @@ create table order_items (
     price_per_product       int,
     quantity                int
 );
+
+create table profile (
+    id                      bigserial primary key,
+    user_id                 bigint references users(id),
+    email                   varchar(50) unique,
+    name                    varchar(100) ,
+    surname                 varchar(100) ,
+    phone                   varchar(10) ,
+    birthyear               varchar(4) ,
+    sex                     varchar(2) ,
+    city                    varchar(50) ,
+
+);
+insert into profile (user_id, email)
+values
+(1, 'user@gmail.com');
 
 insert into categories (title)
 values
